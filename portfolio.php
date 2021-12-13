@@ -1,14 +1,67 @@
-
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>게시판</title>
-    <link rel="stylesheet" type="text/css" href="/BOARD/style2.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="css/header.css" type="text/css" rel="stylesheet" />
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="style2.css" type="text/css" rel="stylesheet" />
+    
     <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
     <?php include $_SERVER['DOCUMENT_ROOT']."/BOARD/db.php"; ?> 
+    <link rel="stylesheet" type="text/css" href="style2.css" />
 </head>
-<body>
-    <div id="board_area"> 
+<body class="ptbody">
+
+    <header>
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $("#header").load("header.php")
+              /* id 지정을 통해서도 가능합니다. 
+               $("#header").load("header.html #navbar")
+               */       
+            });
+        </script>  
+        
+        <div id="header">
+            <h1>header</h1>
+        </div>
+        
+
+    </header>
+
+    <main>
+        
+        <div class="pintro"><img src="img/pfimg/portfolio_intro_banner.png"></div>
+
+        <!-- <div>
+            <div class="ptbutton">
+                <div><a href=""><img src="img/pfimg/portfolio_all_set.png"></a></div>
+                <div><a href=""><img src="img/pfimg/portfolio_pkg.png"></a></div>
+                <div><a href=""><img src="img/pfimg/portfolio_print.png"></a></div>
+            </div>
+        </div> -->
+
+
+        <!-- ------------------------img board----------------------------------------- -->
+        <!-- <script type="text/javascript">
+            $(document).ready(function(){
+            $("#board2").load("board2.php")
+            /* id 지정을 통해서도 가능합니다. 
+            $("#header").load("header.html #navbar")
+            */       
+            });
+        </script>   -->
+
+
+        <div id="board_area"> 
     <h1 class = jm>이미지 게시판</h1>
     
         <div class="imgl">
@@ -107,9 +160,20 @@
         </div>    
 <!-- //------------------------------------------------ -->
         <div id="write_btn">
-            <a href="/board/write.php"><button>글쓰기</button></a>
+            <a href="/board/write.php"><button class="wrbtn">글쓰기</button></a>
         </div>
     </div>
+
+
+
+<!-- ------------------------img board----------------------------------------- -->
+
+       
+    </main>
+
+    <footer>
+        <div id=""><img src="img/footer.png"></div>
+    </footer>
+
 </body>
 </html>
-

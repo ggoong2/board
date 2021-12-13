@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+header {
+    height: 100px;
+	padding-bottom:0px;
+    margin-left: auto ;
+    display:fixed;
+    background-color: rgb(32, 18, 109);
+
+	/* --display: flex;
+	--flex-direction: column; */
+}
+
+.navbar-nav{
+    padding-top: 20px;
+}
