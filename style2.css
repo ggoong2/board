@@ -58,8 +58,8 @@ ul li {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 241px;
-    width: 343px;
+    max-height: 241px;
+    max-width: 343px;
     margin-top: 30PX;
     background-color: rgb(255, 255, 255);
     /* border: 1px solid rgb(109, 94, 94);

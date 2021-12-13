@@ -31,7 +31,7 @@ $date = date('Y-m-d');
     // $tmpfile =  $_FILES['b_file']['tmp_name'];
 // $o_name = $_FILES['b_file']['name'];
 $filename = $_FILES['b_file']['name'];
-$folder = "board/upload/".$filename;
+$folder = "upload/".$filename;
 move_uploaded_file($_FILES['b_file']['tmp_name'],$folder);
 // Console_log($tmpfile); Console_log($o_name);Console_log($filename);Console_log($folder);
 // Console_log($resFile);   
@@ -42,7 +42,7 @@ if($username && $userpw && $title && $content && $date && $filename){
     $sql = mq("insert into board(name,pw,title,content,date,file) values('".$username."','".$userpw."','".$title."','".$content."','".$date."','".$filename."')"); 
     echo "<script>
     alert('글쓰기 완료되었습니다.');
-    location.href='board/portfolio.php';</script>";
+    location.href='portfolio.php';</script>";
 }else{
     echo "<script>
     alert('글쓰기에 실패했습니다.');

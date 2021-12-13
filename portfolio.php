@@ -160,7 +160,7 @@
         </div>    
 <!-- //------------------------------------------------ -->
         <div id="write_btn">
-            <a href="/board/write.php"><button class="wrbtn">글쓰기</button></a>
+            <a href="/board/board/write.php"><button class="wrbtn">글쓰기</button></a>
         </div>
     </div>
 
