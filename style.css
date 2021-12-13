@@ -207,3 +207,12 @@ ul li {
 	margin-left:10px;
     margin-bottom: 20px;
 }
+
+.imgi {
+	max-height: 241px;
+    max-width: 343px;
+}
+.imgi img{
+	max-height: 241px;
+    max-width: 343px;
+}

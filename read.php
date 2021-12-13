@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>게시판</title>
-	<link rel="stylesheet" type="text/css" href="/BOARD/style.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
 	<?php include $_SERVER['DOCUMENT_ROOT']."/BOARD/db.php"; /* db load */?>
 	<?php
 		$bno = $_GET['idx']; /* bno함수에 idx값을 받아와 넣음*/
@@ -24,7 +24,7 @@
             조회:<?php echo $board['hit']; ?></div>
 		</div>
         <div id="bo_line"></div>
-		<div>
+		<div class="imgi">
 			<?php
 			$src = $board["file"];
             echo "<img src=/BOARD/upload/$src>"; 
@@ -36,7 +36,7 @@
 	<!-- 목록, 수정, 삭제 -->
 	<div id="bo_ser">
 		<ul>
-			<li><a href="/BOARD/index.php">[목록으로]</a></li>
+			<li><a href="index.php">[목록으로]</a></li>
 			<li><a href="modify.php?idx=<?php echo $board['idx']; ?>">[수정]</a></li>
 			<li><a href="delete.php?idx=<?php echo $board['idx']; ?>">[삭제]</a></li>
 		</ul>
