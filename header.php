@@ -8,7 +8,7 @@
 
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
     <link href="css/header.css" type="text/css" rel="stylesheet" />
-    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <!-- <link href="css/main.css" type="text/css" rel="stylesheet" /> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>

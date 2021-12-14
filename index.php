@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
 
-    <link href="/BOARD/BOARD/css/bootstrap.css" type="text/css" rel="stylesheet" />
-    <link href="/BOARD/BOARD/css/header.css" type="text/css" rel="stylesheet" />
-    <link href="/BOARD/BOARD/css/main.css" type="text/css" rel="stylesheet" />
-    <link href="/BOARD/BOARD/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <!-- <link href="css/header.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="css/main.css" type="text/css" rel="stylesheet" /> 
+<!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
 <!-- 
     <link href="starter-template.css" rel="stylesheet">
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-     
-
 </head>
 <body>
     <header>

@@ -12,9 +12,31 @@
 		$sql = mq("select * from board where idx='".$bno."'"); /* 받아온 idx값을 선택 */
 		$board = $sql->fetch_array();
 	?>
+
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="css/header.css" type="text/css" rel="stylesheet" />
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-	
+<header>
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $("#header").load("header.php")
+              /* id 지정을 통해서도 가능합니다. 
+               $("#header").load("header.html #navbar")
+               */       
+            });
+        </script>  
+        
+        <div id="header">
+            <h1>header</h1>
+        </div>
+        
+
+    </header>
 <!-- 글 불러오기 -->
 <div id="board_read">
 	<h2><?php echo $board['title']; ?></h2>
@@ -36,11 +58,16 @@
 	<!-- 목록, 수정, 삭제 -->
 	<div id="bo_ser">
 		<ul>
-			<li><a href="index.php">[목록으로]</a></li>
+			<li><a href="portfolio.php">[목록으로]</a></li>
 			<li><a href="modify.php?idx=<?php echo $board['idx']; ?>">[수정]</a></li>
 			<li><a href="delete.php?idx=<?php echo $board['idx']; ?>">[삭제]</a></li>
 		</ul>
 	</div>
 </div>
+
+
+<footer>
+        <div class="footer"><img src="img/footer.png"></div>
+    </footer>
 </body>
 </html>

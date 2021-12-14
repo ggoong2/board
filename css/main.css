@@ -1,6 +1,4 @@
 @charset "UTF-8";
-
-
 /* .mainc{
     position:absolute;
 } */
@@ -23,7 +21,7 @@ table{
 
 .mline{
   display: flex;
-  justify-content: center;
+  justify-content:left;
 }
 /* .mainc{
     margin-left: 300px ;
@@ -49,9 +47,11 @@ table{
 
 
 table td,th{border:0px solid gray;padding:3px 20px;}
-/* .mains2{
-    position:inherit;
-} */
+#mains2{
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+}
 
 
 .ptbutton{
