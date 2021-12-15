@@ -22,21 +22,8 @@
 </head>
 <body>
 <header>
-        <script type="text/javascript">
-            $(document).ready(function(){
-               $("#header").load("header.php")
-              /* id 지정을 통해서도 가능합니다. 
-               $("#header").load("header.html #navbar")
-               */       
-            });
-        </script>  
-        
-        <div id="header">
-            <h1>header</h1>
-        </div>
-        
-
-    </header>
+        <?php include 'header.php'; ?>
+</header>
 <!-- 글 불러오기 -->
 <div id="board_read">
 	<h2><?php echo $board['title']; ?></h2>
@@ -47,11 +34,14 @@
 		</div>
         <div id="bo_line"></div>
 		<div class="imgi">
-			<?php
-			$src = $board["file"];
-            echo "<img src=/BOARD/upload/$src>"; 
-			?>
+		<?php $src = $board["file"]; 
+		if($src==true){
+            echo "<img src=upload/$src>"; 
+		}
+		?>
 		</div>
+
+
         <div id="bo_content">
             <?php echo nl2br("$board[content]"); ?>
         </div>

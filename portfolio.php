@@ -95,15 +95,12 @@
                     if($board["file"] == null){
                         $src2 = $board["idx"];
                         $title =$board["title"];
-                        echo "<div class = 'imgi2'>";
-                        // echo "<div class = 'imgi2'><a href='read.php?idx=$src2';>no img</a></div>";
-                        echo "<a href='read.php?idx=$src2';>제목:$title</a>";
-                        // echo $board['name'];
-                        echo "</div>";
+                        echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=img/noimg.png></a></div>";
+
                     } else {
                         $src = $board["file"];
                         $src2 = $board["idx"];
-                        echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=/BOARD/upload/$src></a></div>"; 
+                        echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=upload/$src></a></div>"; 
                     }
                 }
             ?>

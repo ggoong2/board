@@ -13,7 +13,6 @@ $content = $_POST['content'];
 $date = date('Y-m-d');
 
 // file upload
-
 // echo "confirm file information <br />";
 //     $uploadfile = $_FILES['b_file']['name'];
 //     if(move_uploaded_file($_FILES['b_file']['tmp_name'],$uploadfile)){
@@ -27,25 +26,47 @@ $date = date('Y-m-d');
 //         echo "파일 업로드 실패 !! 다시 시도해주세요.<br />";
 //     }
 
-
-    // $tmpfile =  $_FILES['b_file']['tmp_name'];
+// $tmpfile =  $_FILES['b_file']['tmp_name'];
 // $o_name = $_FILES['b_file']['name'];
 $filename = $_FILES['b_file']['name'];
-$folder = "upload/".$filename;
-move_uploaded_file($_FILES['b_file']['tmp_name'],$folder);
-// Console_log($tmpfile); Console_log($o_name);Console_log($filename);Console_log($folder);
-// Console_log($resFile);   
+
+// $filename = $_FILES['b_file']['name'];
+// $folder = "upload/".$filename;
+// move_uploaded_file($_FILES['b_file']['tmp_name'],$folder);
 
 
-// \TH:i:sO
-if($username && $userpw && $title && $content && $date && $filename){
-    $sql = mq("insert into board(name,pw,title,content,date,file) values('".$username."','".$userpw."','".$title."','".$content."','".$date."','".$filename."')"); 
-    echo "<script>
-    alert('글쓰기 완료되었습니다.');
-    location.href='portfolio.php';</script>";
+//이미지업로드
+
+if($filename == true){
+    if($username && $userpw && $title && $content && $date && $filename){
+        $imageNameSlice = explode(".",$filename);
+        $imageName = $imageNameSlice[0];
+        $imageType = $imageNameSlice[1];
+        $newImage = chr(rand(97,122)).chr(rand(97,122)).$dates.rand(1,9).".".$imageType;
+        $folder = "upload/".$newImage;
+        move_uploaded_file($_FILES['b_file']['tmp_name'],$folder);
+
+        $sql = mq("insert into board(name,pw,title,content,date,file) values('".$username."','".$userpw."','".$title."','".$content."','".$date."','".$newImage."')"); 
+        echo "<script>
+        alert('글쓰기 완료되었습니다.');
+        location.href='portfolio.php';</script>";
+    }
 }else{
-    echo "<script>
-    alert('글쓰기에 실패했습니다.');
-    history.back();</script>";
+    $sql = mq("insert into board(name,pw,title,content,date) values('".$username."','".$userpw."','".$title."','".$content."','".$date."')"); 
+        echo "<script>
+        alert('글쓰기 완료되었습니다.');
+        location.href='portfolio.php';</script>";
 }
+
+
+// if($username && $userpw && $title && $content && $date && $filename){
+//     $sql = mq("insert into board(name,pw,title,content,date,file) values('".$username."','".$userpw."','".$title."','".$content."','".$date."','".$newImage."')"); 
+//     echo "<script>
+//     alert('글쓰기 완료되었습니다.');
+//     location.href='portfolio.php';</script>";
+// }else{
+//     echo "<script>
+//     alert('글쓰기에 실패했습니다.');
+//     history.back();</script>";
+// }
 ?>
