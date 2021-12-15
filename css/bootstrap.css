@@ -2318,6 +2318,8 @@ table td[class*="col-"],
 table th[class*="col-"] {
   position: static;
   display: table-cell;
+
+  
   float: none;
 }
 .table > thead > tr > td.active,

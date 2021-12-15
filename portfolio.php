@@ -7,9 +7,6 @@
     <title>Document</title>
 
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
     <link href="css/header.css" type="text/css" rel="stylesheet" />
     <link href="css/main.css" type="text/css" rel="stylesheet" />
     <link href="style2.css" type="text/css" rel="stylesheet" />
@@ -21,18 +18,7 @@
 <body class="ptbody">
 
     <header>
-        <script type="text/javascript">
-            $(document).ready(function(){
-               $("#header").load("header.php")
-              /* id 지정을 통해서도 가능합니다. 
-               $("#header").load("header.html #navbar")
-               */       
-            });
-        </script>  
-        
-        <div id="header">
-            <h1>header</h1>
-        </div>
+    <?php include 'header.php'; ?>
         
 
     </header>

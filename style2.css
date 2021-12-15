@@ -254,3 +254,13 @@ ul li {
 	margin-left:10px;
     margin-bottom: 20px;
 }
+
+.pintro{
+	display: flex;
+	justify-content:center;
+  }
+
+.ptbody footer{
+	display: flex;
+	justify-content:center;
+}

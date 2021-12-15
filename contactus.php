@@ -128,7 +128,7 @@
     </main>
 
     <footer>
-        <div id=""><img src="img/footer.png"></div>
+        <div class="footer"><img src="img/footer.png"></div>
     </footer>
 
 </body>

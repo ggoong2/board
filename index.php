@@ -5,13 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
-
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
     <!-- <link href="css/header.css" type="text/css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <link href="css/main.css" type="text/css" rel="stylesheet" /> 
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
 <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
 <!-- 
     <link href="starter-template.css" rel="stylesheet">
@@ -19,35 +17,14 @@
 </head>
 <body>
     <header>
-        <script type="text/javascript">
-            $(document).ready(function(){
-               $("#header").load("header.php")
-              /* id 지정을 통해서도 가능합니다. 
-               $("#header").load("header.html #navbar")
-               */       
-            });
-        </script>  
-        
-        <div id="header">
-            <h1>header</h1>
-        </div>
+    <?php include 'header.php'; ?>
         
 
     </header>
 
     <main>
         
-        <script type="text/javascript">
-            $(document).ready(function(){
-               $("#main").load("homeb.php")
-              /* id 지정을 통해서도 가능합니다. 
-               $("#header").load("header.html #navbar")
-               */       
-            });
-        </script>   
-        <div id="main">
-                <h1>main</h1>
-        </div>
+    <?php include 'homeb.php'; ?>
             
     </main>
     <footer>

@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
     <!-- <link href="css/bootstrap.css" type="text/css" rel="stylesheet" /> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="imgSlider/imgslider2.css" type="text/css" rel="stylesheet" />
-    <link href="css/main.css" type="text/css" rel="stylesheet" />
     <!-- --------------------------------------------------------------------- -->
     <!-- <script type="text/javascript">
 
@@ -179,14 +179,15 @@
                     </div>
                 </td>
         </table>
+        
         </div>
-        <div id="mains2">
+        <div class="mains2">
             <div class="mline"><img src="img/main2_line.png"></div>
-            <div><img src="img/main2_contents2.png"></div>
+            <div class="c3"><img src="img/main2_contents2.png"></div>
             <div class="c3"><img src="img/main2_contents3.png"></div>
-            <div><img src="img/main2_contents4.png"></div>
+            <div class="c3"><img src="img/main2_contents4.png"></div>
         </div>
-    </div>
+    
 
     <!-- <div class="mainc">
             <div><img src="img/banner11.png"></div>
