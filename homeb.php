@@ -28,25 +28,43 @@
 <body>
     
 <!-- --------------------------------------------------------------------- -->
+<?php 
+  include $_SERVER['DOCUMENT_ROOT']."/board/board/db.php"; 
+?> 
 
 <div class="sliderbody">
   <div class="slider">
     <div class="slide active">
-      <img src="../board/img/banner11.png" alt="">
+      <?php 
+        $sql1 = mq("select * from slide_file where view = 1");
+        $board1 = $sql1->fetch_array();
+        $simg1 = $board1["file"];
+        echo "<img src='/board_admin/slide_img/$simg1' alt=''>";
+      ?>
       <!-- <div class="info">
         <h2>Winter Mountains</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div> -->
     </div>
     <div class="slide">
-      <img src="img/banner12.png" alt="">
+      <?php 
+        $sql2 = mq("select * from slide_file where view = 2");
+        $board2 = $sql2->fetch_array();
+        $simg2 = $board2["file"];
+        echo "<img src='/board_admin/slide_img/$simg2' alt=''>";
+      ?>
       <!-- <div class="info">
         <h2>Tropical Desert</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div> -->
     </div>
     <div class="slide">
-      <img src="img/banner13.png" alt="">
+      <?php 
+        $sql3 = mq("select * from slide_file where view = 3");
+        $board3 = $sql3->fetch_array();
+        $simg3 = $board3["file"];
+        echo "<img src='/board_admin/slide_img/$simg3' alt=''>";
+      ?>
       <!-- <div class="info">
         <h2>Steaming Volcanoes</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

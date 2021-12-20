@@ -1,26 +1,22 @@
+<?php include $_SERVER['DOCUMENT_ROOT']."/board/board/db.php"; ?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>포폴게시판</title>
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
     <link href="css/header.css" type="text/css" rel="stylesheet" />
     <link href="css/main.css" type="text/css" rel="stylesheet" />
     <link href="style2.css" type="text/css" rel="stylesheet" />
-    
     <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
-    <?php include $_SERVER['DOCUMENT_ROOT']."/BOARD/db.php"; ?> 
-    <link rel="stylesheet" type="text/css" href="style2.css" />
+    
+    <!-- <link rel="stylesheet" type="text/css" href="style2.css" /> -->
 </head>
 <body class="ptbody">
-
     <header>
     <?php include 'header.php'; ?>
-        
-
     </header>
 
     <main>
@@ -47,9 +43,8 @@
         </script>   -->
 
 
-        <div id="board_area"> 
-    <h1 class = jm>이미지 게시판</h1>
-    
+    <div id="board_area"> 
+        <h1 class = jm>이미지 게시판</h1>
         <div class="imgl">
             <?php
                 if(isset($_GET['page'])){
@@ -82,7 +77,6 @@
                         $src2 = $board["idx"];
                         $title =$board["title"];
                         echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=img/noimg.png></a></div>";
-
                     } else {
                         $src = $board["file"];
                         $src2 = $board["idx"];
@@ -90,7 +84,8 @@
                     }
                 }
             ?>
-        </div>
+           
+    </div>
 
 <!-- <div class = 'imgl'> -->
         
@@ -140,7 +135,7 @@
                     }
                 ?>
             </ul>
-        </div>    
+</div>    
 <!-- //------------------------------------------------ -->
         <div id="write_btn">
             <a href="/board/board/write.php"><button class="wrbtn">글쓰기</button></a>
