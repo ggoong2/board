@@ -29,7 +29,7 @@
     
 <!-- --------------------------------------------------------------------- -->
 <?php 
-  include $_SERVER['DOCUMENT_ROOT']."/board/board/db.php"; 
+  include $_SERVER['DOCUMENT_ROOT']."/board/db.php"; 
 ?> 
 
 <div class="sliderbody">

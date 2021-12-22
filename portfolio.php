@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/board/board/db.php"; ?> 
+<?php include $_SERVER['DOCUMENT_ROOT']."/board/db.php"; ?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,9 +137,9 @@
             </ul>
 </div>    
 <!-- //------------------------------------------------ -->
-        <div id="write_btn">
-            <a href="/board/board/write.php"><button class="wrbtn">글쓰기</button></a>
-        </div>
+        <!-- <div id="write_btn">
+            <a href="/board/write.php"><button class="wrbtn">글쓰기</button></a>
+        </div> -->
     </div>
 
 

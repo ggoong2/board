@@ -36,17 +36,21 @@ $filename = $_FILES['b_file']['name'];
 
 
 //이미지업로드
+$sql1 = mq("select MAX(view) as view FROM board");
+$rw = $sql1->fetch_array();
+$row_num = $rw['view'];
+$view = $row_num+1;
 
 if($filename == true){
-    if($username && $userpw && $title && $content && $date && $filename){
+    if($username && $userpw && $title && $content && $date && $filename && $view){
         $imageNameSlice = explode(".",$filename);
         $imageName = $imageNameSlice[0];
         $imageType = $imageNameSlice[1];
         $newImage = chr(rand(97,122)).chr(rand(97,122)).$dates.rand(1,9).".".$imageType;
-        $folder = "upload/".$newImage;
+        $folder = "/board_admin/upload/".$newImage;
         move_uploaded_file($_FILES['b_file']['tmp_name'],$folder);
 
-        $sql = mq("insert into board(name,pw,title,content,date,file) values('".$username."','".$userpw."','".$title."','".$content."','".$date."','".$newImage."')"); 
+        $sql = mq("insert into board(name,pw,title,content,date,file,view) values('".$username."','".$userpw."','".$title."','".$content."','".$date."','".$newImage."','".$view."')"); 
         echo "<script>
         alert('글쓰기 완료되었습니다.');
         location.href='portfolio.php';</script>";

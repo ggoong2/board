@@ -47,4 +47,4 @@ if($oldfilename==true && $filename==true){
 
 ?>
 <!-- <script type="text/javascript"> alert("수정되었습니다."); </script> -->
-<meta http-equiv="refresh" content="0 url=/board/board/read.php?idx=<?php echo $bno; ?>">
+<meta http-equiv="refresh" content="0 url=/board/read.php?idx=<?php echo $bno; ?>">
