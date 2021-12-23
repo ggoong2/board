@@ -68,6 +68,7 @@
 
 
         <table class="cut">
+        <form action='email_ok.php' method='post' enctype='multipart/form-data'>
             <tr>
                 <td>구 분</td>
                 <td>
@@ -77,7 +78,7 @@
             <tr>
                 <td>성 명</td>
                 <td>
-                    <input type="text" id="gubun" style="height:30px; width:30%; border: 1;">
+                    <input type="text"name="name" id="gubun" style="height:30px; width:30%; border: 1;">
                 </td>
             </tr>
             <tr>
@@ -93,13 +94,13 @@
             <tr>
                 <td>이메일</td>
                 <td>
-                    <input type="text" id="gubun" style="height:30px; width:50%; border: 1;">
+                    <input type="text" name="email" id="gubun" style="height:30px; width:50%; border: 1;">
                 </td>
             </tr>
             <tr>
                 <td>설 명</td>
                 <td>
-                    <textarea class="notes" rows="17" style="width: 900px; border: px; margin-top:6px; height: 280px;"></textarea>
+                    <textarea class="notes" name="content" rows="17" style="width: 900px; border: px; margin-top:6px; height: 280px;"></textarea>
                     <!-- <input type="text" id="gubun" style="height:300px; width:110%; border: 1;"> -->
                 </td>
             </tr>
@@ -108,22 +109,11 @@
                 <td>파일</td>
                 <td><input type="file" ></td>
             </tr>
-
+        
         </table>
 
-
-
-
-
-
-
-
-
-
-
-
-        <div class="quesb"><a href=""><img src="img/contact_ques_button.png"></a></div>
-
+        <div class="quesb"><a href="mail_ok2.php"><img src="img/contact_ques_button.png"></a></div>
+        </form>
        
     </main>
 

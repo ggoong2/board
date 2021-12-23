@@ -64,6 +64,7 @@
                 $total_block = ceil($total_page/$block_ct); //블럭 총 개수
                 $start_num = ($page-1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
                 $sql2 = mq("select * from board ORDER BY idx DESC LIMIT $start_num, $list");
+                $index = 0;
                 
                 // while($board = $sql2->fetch_array()){
                 //     $title=$board["title"]; 
@@ -72,7 +73,9 @@
                 //         echo "<img src='".$sql['path'].$sql['filename']."' />";
                 //     else 
                 //         echo "이미지 없음";
+                
                 while($board = $sql2->fetch_array()){
+                    $index++;
                     if($board["file"] == null){
                         $src2 = $board["idx"];
                         $title =$board["title"];
@@ -80,11 +83,20 @@
                     } else {
                         $src = $board["file"];
                         $src2 = $board["idx"];
-                        echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=upload/$src></a></div>"; 
+                        echo "<div class = 'imgi'><a href='#'  onclick='doShow$index();'><img src=/board_admin/upload/$src></a></div>"; 
+                        // echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=/board_admin/upload/$src onclick='doShow$index()'></a></div>"; 
+                        $imgsrc = "/board_admin/upload/$src";
+
+                        echo"
+                            <script>
+                                funcion doShow$index(imgSrc){
+                                document.getElementById('bigImg').src = imgSrc;
+                                }
+                            </script>
+                        ";
                     }
                 }
-            ?>
-           
+            ?>  
     </div>
 
 <!-- <div class = 'imgl'> -->

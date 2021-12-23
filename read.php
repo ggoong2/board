@@ -36,7 +36,7 @@
 		<div class="imgi">
 		<?php $src = $board["file"]; 
 		if($src==true){
-            echo "<img src=upload/$src>"; 
+            echo "<img src=/board_admin/upload/$src>"; 
 		}
 		?>
 		</div>
