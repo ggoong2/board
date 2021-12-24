@@ -68,11 +68,11 @@
 
 
         <table class="cut">
-        <form action='email_ok.php' method='post' enctype='multipart/form-data'>
+        <form action='mail_ok.php' method='post' enctype='multipart/form-data'>
             <tr>
                 <td>구 분</td>
                 <td>
-                    <input type="text" id="gubun" style="height:30px; width:20%; border: 1;">
+                    <input type="text"name="gubun" id="gubun" style="height:30px; width:20%; border: 1;">
                 </td>
             </tr>
             <tr>
@@ -84,9 +84,9 @@
             <tr>
                 <td>전 화 번 호</td>
                 <td>
-                    <input type="text" id="gubun" style="height:30px; width:10%; border: 1;"> - 
-                    <input type="text" id="gubun" style="height:30px; width:10%; border: 1;"> - 
-                    <input type="text" id="gubun" style="height:30px; width:10%; border: 1;">
+                    <input type="text"name="phone1" id="gubun" style="height:30px; width:10%; border: 1;"> - 
+                    <input type="text"name="phone2" id="gubun" style="height:30px; width:10%; border: 1;"> - 
+                    <input type="text"name="phone3" id="gubun" style="height:30px; width:10%; border: 1;">
                 </td>
             </tr>
 
@@ -112,7 +112,7 @@
         
         </table>
 
-        <div class="quesb"><a href="mail_ok2.php"><img src="img/contact_ques_button.png"></a></div>
+        <div class="quesb"><button type="submit"><img src="img/contact_ques_button.png"></button></div>
         </form>
        
     </main>

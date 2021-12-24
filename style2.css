@@ -47,6 +47,10 @@ ul li {
 } */
 .jm{
     margin: 30px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	
 }
 .imgl{
     display: grid;
@@ -66,6 +70,10 @@ ul li {
     border-color: #333; */
 }
 .imgi a img{
+	max-height: 241px;
+    max-width: 343px;
+}
+#test img{
 	max-height: 241px;
     max-width: 343px;
 }
@@ -263,4 +271,7 @@ ul li {
 .ptbody footer{
 	display: flex;
 	justify-content:center;
+}
+#test{
+	margin-top: 50px;
 }

@@ -11,7 +11,7 @@
     <link href="css/main.css" type="text/css" rel="stylesheet" />
     <link href="style2.css" type="text/css" rel="stylesheet" />
     <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="style2.css" /> -->
 </head>
 <body class="ptbody">
@@ -42,9 +42,15 @@
             });
         </script>   -->
 
-
+     
+        
     <div id="board_area"> 
-        <h1 class = jm>이미지 게시판</h1>
+        <h1 class = "jm" id="jm">이미지 게시판</h1>
+        <div id="test" style="display: none; width: 900px;height: 500px;background-size: contain;background-position: center;background-repeat: no-repeat; background-image: url(img/banner12.png);">
+            <input type=button id="testid" value="왼쪽" onclick='moveLR()'>
+            <input type=button value="오른쪾">
+        </div>
+
         <div class="imgl">
             <?php
                 if(isset($_GET['page'])){
@@ -63,7 +69,7 @@
                 if($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
                 $total_block = ceil($total_page/$block_ct); //블럭 총 개수
                 $start_num = ($page-1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
-                $sql2 = mq("select * from board ORDER BY idx DESC LIMIT $start_num, $list");
+                $sql2 = mq("select * from board ORDER BY view DESC LIMIT $start_num, $list");
                 $index = 0;
                 
                 // while($board = $sql2->fetch_array()){
@@ -77,26 +83,50 @@
                 while($board = $sql2->fetch_array()){
                     $index++;
                     if($board["file"] == null){
-                        $src2 = $board["idx"];
-                        $title =$board["title"];
-                        echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=img/noimg.png></a></div>";
+                        // $src2 = $board["idx"];
+                        // $title =$board["title"];
+                        // echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=img/noimg.png></a></div>";
                     } else {
                         $src = $board["file"];
                         $src2 = $board["idx"];
-                        echo "<div class = 'imgi'><a href='#'  onclick='doShow$index();'><img src=/board_admin/upload/$src></a></div>"; 
-                        // echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=/board_admin/upload/$src onclick='doShow$index()'></a></div>"; 
                         $imgsrc = "/board_admin/upload/$src";
-
-                        echo"
-                            <script>
-                                funcion doShow$index(imgSrc){
-                                document.getElementById('bigImg').src = imgSrc;
+                        echo "
+                        <div class = 'imgi' id = 'imgi$index'>
+                            <a href='#jm'><img src=/board_admin/upload/$src onclick='moveURL$index()'>
+                            </a>
+                        </div>
+                        "; 
+                        
+                     echo"
+                        <script>
+                               
+                                function moveURL$index(){ 
+                                    if($('#test').css('display') == 'none'){ 
+                                        $('#test').css('display','block'),
+                                        $('#test').css('background-image','url($imgsrc)');
+                                        
+                                    } else if($('#test').css('display') == 'block'){ // div 보일때
+                                        $('#test').css('display','none'); // 숨기기
+                                    }
                                 }
-                            </script>
-                        ";
+                           
+                            
+                        </script>
+                      ";
+                      
+                        // echo "<div class = 'imgi'><a href='read.php?idx=$src2';><img src=/board_admin/upload/$src onclick='doShow$index()'></a></div>"; 
+                       
+                        
+                       
+                        
+                               
                     }
+                    
                 }
+                
             ?>  
+
+
     </div>
 
 <!-- <div class = 'imgl'> -->

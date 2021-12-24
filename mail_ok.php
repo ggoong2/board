@@ -1,51 +1,73 @@
 <?php
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require "PHPMailer/src/PHPMailer.php";
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-require "PHPMailer/src/SMTP.php";
+const USER	= 'ukwon7@gmail.com'; //보내는 사람 이메일
+const PASSWORD = ''; //비밀번호
 
-require "PHPMailer/src/Exception.php";
+
+$NAME		= $_POST['name'];
+$MAIL		= $_POST['email'];
+$PHONE      = $_POST['phone1'].$_POST['phone2'].$_POST['phone3'];
+$SUBJECT    = $_POST['gubun'];
+$MESSAGE    = $_POST['content'];
+
+// $HELP_EMAIL = 'help@thermoeye.co.kr';
 
 
-// Load Composer's autoloader
-// require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+$mail = new PHPMailer(true);
 
-// Instantiation and passing `true` enables exceptions
+//Enable SMTP debugging.
+$mail->SMTPDebug = 2;                               
+//Set PHPMailer to use SMTP.
+$mail->isSMTP();            
+//Set SMTP host name                          
+$mail->Host = "smtp.gmail.com";
+$mail->SMTPSecure = "ssl";
+$mail->Port = 465;
 
-// function send_mail($addresses, $subject, $body) {
-    $mail = new PHPMailer(true);
-    
-    try {
-        //Server settings
-        $mail->isSMTP();                                            // Send using SMTP
-        $mail->Host       = 'smtp.naver.com';                    // Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'ukwon7';                     // SMTP username
-        $mail->Password   = 'wnsgur123';                               // SMTP password
-        $mail->CharSet = 'utf-8'; 
-        $mail->Encoding = "base64";
-        $mail->SMTPSecure = 'tls';          
-        $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+//smtp 설정이 중요합니다. 테스트결과, 다음은 위처럼, 네이버는 아래처럼 해야하더군요
 
-        //Recipients
-        $mail->setFrom('ukwon7@naver.com');
-        $mail->addAddress('ukwon7@gmail.com');     // Add a recipient
+// $mail->Host = "smtp.naver.com";
+// $mail->SMTPSecure = "tls";
+// $mail->Port = 587;
 
-        // Content
-        $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'sdfsdf';
-        $mail->Body    = 'sdfsdfdsfa';
+//Set this to true if SMTP host requires authentication to send email
+$mail->SMTPAuth = true;                          
+//Provide username and password     
+$mail->Username = USER;                 
+$mail->Password = PASSWORD;
+$mail->CharSet = "utf-8"; //이거 설정해야 한글 안깨짐
 
-        $mail->send();
-        echo 'Message has been sent';
-        return true;
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        return false;
-    }
-// }
+//If SMTP requires TLS encryption then set it
+
+$mail->From = USER;
+$mail->FromName = "$NAME";
+
+$mail->addAddress("ggoong@frwks.com", "Recepient Name"); //받는 사람
+// $mail->addAddress($HELP_EMAIL, '');
+// 테스트 끝나면 받는 주소 바꿔놓기
+
+$mail->isHTML(true);
+
+$mail->Subject = "$NAME-$SUBJECT";
+$mail->Body = "$MESSAGE";
+
+$mail->AltBody = "";
+
+try {
+    $mail->send();
+    echo "<script> alert('문의를 보냈습니다');
+    location.href='contactus.php';</script>";
+} catch (Exception $e) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+    echo "<script> alert('문의사항을 확인하세요');</script>";
+}
+
+?>
+

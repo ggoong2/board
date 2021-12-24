@@ -1,17 +1,28 @@
-
-<c:set var="name" value="코요" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
  
-<c:choose> 
-    <c:when test="${name eq '새박'}">
-        <a>저의 이름은 새박입니다.</a>
-    </c:when>
-    <c:when test="${name eq '샘샘'}">
-        <a>저의 이름은 샘샘입니다.</a>
-    </c:when>
-    <c:when test="${name eq '박샘'}">
-        <a>저의 이름은 박샘입니다.</a>
-    </c:when>
-    <c:otherwise>
-        <a>내이름은 무엇인가</a>
-    </c:otherwise>
-</c:choose>
+<div id="test" style="width:100px; height:100px; background:#fff100; display:none" ></div>
+<input type="button" onclick="testdiv();" value="토글">
+
+<script type="text/javascript">
+    function testdiv(){ 
+        if($('#test').css('display') == 'none'){ // div 안보일때
+            $('#test').css('display','block'); // 보이기
+        } else if($('#test').css('display') == 'block'){ // div 보일때
+            $('#test').css('display','none'); // 숨기기
+        }
+    }
+
+</script>
+
+
+</body>
+</html>
